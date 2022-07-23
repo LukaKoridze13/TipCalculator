@@ -79,7 +79,8 @@ $family: 'Space Mono', monospace;
     box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
     border-radius: 25px;
     margin-top: 87.86px;
-    gap:20px;
+    gap: 20px;
+
     &__left {
         width: 379px;
         height: 417px;
@@ -122,10 +123,12 @@ $family: 'Space Mono', monospace;
                     line-height: 36px;
                     color: $dark;
                     font-weight: $weight;
-                    &::placeholder{
+
+                    &::placeholder {
                         color: hsla(183, 100%, 15%, 0.35);
                         font-family: $family;
                     }
+
                     &:focus {
                         border: 2px solid hsla(172, 67%, 45%, 1);
                         padding: 6px 15px;
@@ -200,12 +203,135 @@ $family: 'Space Mono', monospace;
                 }
             }
         }
+
+        .peopleBox {
+            margin-top: 40px;
+
+            label {
+                height: 24px;
+                font-size: 16px;
+                line-height: 24px;
+                color: $darkgray;
+                display: block;
+                cursor: pointer;
+            }
+
+            div {
+                position: relative;
+                margin-top: 6px;
+                height: 48px;
+
+                img {
+                    position: absolute;
+                    left: 5.08%;
+                    top: 24px;
+                    transform: translateY(-50%);
+                }
+
+                input {
+                    cursor: pointer;
+                    width: 100%;
+                    height: 48px;
+                    display: block;
+                    background: $inpbg;
+                    border-radius: 5px;
+                    outline: none;
+                    border: none;
+                    padding: 6px 17px;
+                    text-align: right;
+                    position: absolute;
+                    font-size: $inputs;
+                    line-height: 36px;
+                    color: $dark;
+                    font-weight: $weight;
+
+                    &::placeholder {
+                        color: hsla(183, 100%, 15%, 0.35);
+                        font-family: $family;
+                    }
+
+                    &:focus {
+                        border: 2px solid hsla(172, 67%, 45%, 1);
+                        padding: 6px 15px;
+                    }
+
+                    &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+
+                    -moz-appearance: textfield;
+                }
+
+            }
+        }
     }
 
     &__right {
         width: 413px;
         height: 417px;
-        outline: auto;
+        background-color: $dark;
+        border-radius: 15px;
+        padding-top: 40px;
+        .personTip,
+        .totalTip {
+            width: 80%;
+            max-width: 333px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0px auto;
+            flex-wrap: wrap;
+            gap: 20px;
+            &__left {
+                .tipAmount {
+                    height: 24px;
+                    font-family: $family;
+                    font-weight: $weight;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: $white;
+                }
+
+                .person {
+                    font-family: $family;
+                    font-weight: $weight;
+                    font-size: 13px;
+                    line-height: 19px;
+                    color: #7F9D9F;
+                    margin-top: 3px;
+                }
+            }
+
+            &__right {
+                font-family: $family;
+                font-weight: $weight;
+                font-size: 48px;
+                line-height: 71px;
+                text-align: right;
+                letter-spacing: -1px;
+                color: #26C2AE;
+            }
+        }
+
+        .totalTip {
+            margin-top: 25px;
+        }
+
+        button {
+            width: 80%;
+            height: 48px;
+            max-width: 333px;
+            display: block;
+            margin: 133px auto 0px auto;
+            background-color: hsla(183, 78%, 24%, 1);
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: $weight;
+            font-family: $family;
+            color: hsla(183, 100%, 15%, 0.35);
+            border: none;
+        }
     }
 }
 

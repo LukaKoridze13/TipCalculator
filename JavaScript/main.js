@@ -1,10 +1,22 @@
+// document event listeners
+document.addEventListener('click', (event) => {
+    console.log(document.querySelector('.tip-Custom').value)
+    if (document.querySelector('.tip-Custom').value === '' && event.target !== document.querySelector('.tip-Custom')) {
+        let x = document.querySelector('.tip-Custom')
+        x.type = 'text'
+        x.value = 'Custom'
+        x.style.textAlign = 'center'
+        x.style.paddingRight = '2px'
+        x.style.color = 'hsla(180, 18%, 40%, 1)';
+    }
+})
 // Tip Selector
 const tipBox = document.querySelector('.tips') // Tip Container
 const tips = [5, 10, 15, 25, 50, "Custom"] // Tips
 // Create tip boxes automatically
 createTips()
 // creating tip clickable elements
-function createTips(){
+function createTips() {
     // create tips
     tips.map((amount, index) => {
         if (index === tips.length - 1) {
@@ -36,20 +48,20 @@ function createTips(){
                 x.value = null
                 x.style.textAlign = 'right'
                 x.style.paddingRight = '17px'
-                x.style.color= 'hsla(183, 100%, 15%, 1)';         
+                x.style.color = 'hsla(183, 100%, 15%, 1)';
             })
         } else {
             x.addEventListener('click', () => {
                 for (let y of document.querySelectorAll('.tip')) { y.classList.remove('active') }
                 x.classList.add('active')
-                let cust=document.querySelector('.tip-Custom')
+                let cust = document.querySelector('.tip-Custom')
                 cust.type = 'text'
                 cust.value = 'Custom'
                 cust.style.textAlign = 'center'
                 cust.style.paddingRight = '2px'
-                cust.style.color= 'hsla(180, 18%, 40%, 1)'; 
+                cust.style.color = 'hsla(180, 18%, 40%, 1)';
             })
         }
-    
+
     }
 }

@@ -1,4 +1,11 @@
 @media (max-width: 920px) {
+  .container {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    min-height: 100vh;
+    padding: 20px 0px;
+  }
   .main {
     width: 430px;
     height: -webkit-fit-content;
@@ -38,7 +45,19 @@
   }
   .main__right {
     width: 100%;
-    height: 417px;
-    outline: auto;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-top: 32px;
+    padding: 39px 24px 24px 24px;
+  }
+  .main__right .personTip__left,
+.main__right .totalTip__left {
+    width: 100%;
+  }
+  .main__right .personTip__right,
+.main__right .totalTip__right {
+    width: 100%;
+    text-align: left;
   }
 }/*# sourceMappingURL=responsive.css.map */

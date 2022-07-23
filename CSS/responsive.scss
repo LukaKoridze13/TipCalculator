@@ -1,27 +1,37 @@
 @media (max-width:920px) {
+    .container {
+        height: fit-content;
+        min-height: 100vh;
+        padding: 20px 0px;
+    }
+
     .main {
         width: 430px;
         height: fit-content;
         padding: 40px;
     }
 }
+
 @media (max-width:430px) {
     .main {
         width: 100%;
         height: fit-content;
         padding: 32px;
+
         &__left {
             width: 100%;
-            height: fit-content;  
-            .billBox {   
+            height: fit-content;
+
+            .billBox {
                 div {
-   
+
                     input {
                         width: 100%;
                     }
-    
+
                 }
-            } 
+            }
+
             .tipBox {
                 .tips {
                     width: 100%;
@@ -29,16 +39,32 @@
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
                     grid-gap: 16px;
-                    .tip{
+
+                    .tip {
                         width: 100%;
                     }
                 }
             }
-        }  
+
+        }
+
         &__right {
             width: 100%;
-            height: 417px;
-            outline: auto;
+            height: fit-content;
+            margin-top: 32px;
+            padding: 39px 24px 24px 24px;
+
+            .personTip,
+            .totalTip {
+                &__left {
+                    width: 100%;
+                }
+
+                &__right {
+                    width: 100%;
+                    text-align: left;
+                }
+            }
         }
     }
 }
