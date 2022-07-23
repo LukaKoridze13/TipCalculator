@@ -20,20 +20,30 @@
         <main class="main spaceAround">
             <div class="main__left">
                 <div class="billBox">
-                    <label for="bill">Bill</label>
+                    <div class="spaceBetween">
+                        <label for="bill">Bill</label>
+                        <p class="alert deactivate">Can't be zero</p>
+                    </div>
                     <div>
                         <input type="number" id="bill" name="bill" placeholder="0">
                         <img src="./Images/dollar.svg" alt="Dollar Sign">
                     </div>
                 </div>
                 <div class="tipBox">
-                    <p>Select Tip %</p>
+                    <div class="spaceBetween">
+                        <p>Select Tip %</p>
+                        <p class="alert deactivate">Can't be zero</p>
+                    </div>
+
                     <div class="tips">
 
                     </div>
                 </div>
                 <div class="peopleBox">
-                    <label for="people">Number of People</label>
+                    <div class="spaceBetween">
+                        <label for="people">Number of People</label>
+                        <p class="alert deactivate">Can't be zero</p>
+                    </div>
                     <div>
                         <input type="number" id="people" name="people" placeholder="0">
                         <img src="./Images/person.svg" alt="Person Icon">

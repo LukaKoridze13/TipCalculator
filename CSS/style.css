@@ -327,4 +327,16 @@
   background: #9FE8DF !important;
   color: hsl(183deg, 100%, 15%) !important;
   cursor: pointer !important;
+}
+
+.alert {
+  display: block !important;
+  font-family: "Space Mono", monospace !important;
+  font-weight: 700 !important;
+  line-height: 24px !important;
+  color: #E17457 !important;
+}
+
+.deactivate {
+  display: none !important;
 }/*# sourceMappingURL=style.css.map */

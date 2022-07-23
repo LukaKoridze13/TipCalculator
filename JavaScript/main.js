@@ -1,3 +1,4 @@
+let calcStatus = false;
 // Inputs 
 let bill = document.querySelector('#bill')
 let tip; // will be valid after click
@@ -65,6 +66,11 @@ function createTips() {
             x.addEventListener('click', () => {
                 for (let y of document.querySelectorAll('.tip')) { y.classList.remove('active') }
                 x.removeAttribute('placeholder')
+                if(calcStatus===false){
+                    calcStatus = true;
+                    messagesOn()
+                }
+                document.querySelectorAll('.alert')[1].classList.remove('deactivate')
             })
 
         } else {
@@ -75,6 +81,11 @@ function createTips() {
                 cust.value = '';
                 tip = Number(x.innerText.slice(0, -1))
                 cust.placeholder = 'Custom'
+                document.querySelectorAll('.alert')[1].classList.add('deactivate')
+                if(calcStatus===false){
+                    calcStatus = true;
+                    messagesOn()
+                }
             })
         }
 
@@ -91,6 +102,11 @@ customTip.addEventListener('input', () => {
     }
     tip = value;
     activateCalculations()
+    if(Number(customTip.value)>=1){
+        document.querySelectorAll('.alert')[1].classList.add('deactivate')
+    }else{
+        document.querySelectorAll('.alert')[1].classList.remove('deactivate')
+    }
 })
 bill.addEventListener('input', () => {
     let value = Number(bill.value)
@@ -98,6 +114,11 @@ bill.addEventListener('input', () => {
         bill.value = ''
     }
     activateCalculations()
+    if(Number(bill.value)>=1){
+        document.querySelectorAll('.alert')[0].classList.add('deactivate')
+    }else{
+        document.querySelectorAll('.alert')[0].classList.remove('deactivate')
+    }
 })
 people.addEventListener('input', () => {
     let value = Number(people.value)
@@ -105,40 +126,95 @@ people.addEventListener('input', () => {
         people.value = ''
     }
     activateCalculations()
+    if(Number(people.value)>=1){
+        console.log('done')
+        document.querySelectorAll('.alert')[2].classList.add('deactivate')
+    }else{
+        document.querySelectorAll('.alert')[2].classList.remove('deactivate')
+    }
 })
-
+bill.addEventListener('click', () => {
+    if(calcStatus===false){
+        calcStatus = true;
+        messagesOn()
+    } 
+})
+people.addEventListener('click', () => {
+    if(calcStatus===false){
+        calcStatus = true;
+        messagesOn()
+    } 
+})
 // Calculations
-function calculate(){
-    let tipper = Math.floor(Number(bill.value)/100*tip/Number(people.value)*100)/100 // avoid overpaying, use floor
+function calculate() {
+    let tipper = Math.floor(Number(bill.value) / 100 * tip / Number(people.value) * 100) / 100 // avoid overpaying, use floor
     document.querySelector('.personTip__right').innerText = `$${tipper}`
-    let total = Math.round((Number(bill.value)/Number(people.value)+ tipper)*100)/100 // avoid overpaying
+    let total = Math.round((Number(bill.value) / Number(people.value) + tipper) * 100) / 100 // avoid overpaying
     document.querySelector('.totalTip__right').innerText = `$${total}`
+    if (document.querySelector('.totalTip__right').innerText.length >= 9 || document.querySelector('.personTip__right').innerText >= 8) {
+        document.querySelector('.totalTip__right').style.fontSize = "30px"
+        document.querySelector('.personTip__right').style.fontSize = "30px"
+    } else {
+        document.querySelector('.totalTip__right').style.fontSize = "48px"
+        document.querySelector('.personTip__right').style.fontSize = "48px"
+    }
 }
-function clearCalculations(){
+function clearCalculations() {
     document.querySelector('.personTip__right').innerText = '$0.00'
     document.querySelector('.totalTip__right').innerText = `$0.00`
 }
-function activateCalculations(){
+function activateCalculations() {
     // activating calculations
-    if (Number(bill.value) >= 1 && Number(tip) >= 1 && Number(people.value) >= 1 ) {
+    if (Number(bill.value) >= 1 && Number(tip) >= 1 && Number(people.value) >= 1) {
         reset.removeAttribute('disabled')
         reset.classList.add('activeButton')
+        messagesOff()
         calculate()
     } else {
         reset.setAttribute('disabled', true)
         reset.classList.remove('activeButton')
         clearCalculations()
+        if (calcStatus === true) {
+            if (Number(bill.value) < 1) {
+                document.querySelectorAll('.alert')[0].classList.remove('deactivate')
+            }
+            if (Number(tip) < 1 || Number(tip) === NaN) {
+                document.querySelectorAll('.alert')[1].classList.remove('deactivate')
+            }
+            if (Number(people.value) < 1) {
+                document.querySelectorAll('.alert')[2].classList.remove('deactivate')
+            }
+        }
     }
 }
 
 // reset 
 reset.addEventListener('click', () => {
-    clearCalculations();   
+    clearCalculations();
     activateCalculations();
-    bill.value='' 
-    tip = 0; 
-    people.value=''
+    bill.value = ''
+    tip = 0;
+    people.value = ''
     for (let y of document.querySelectorAll('.tip')) { y.classList.remove('active') }
-    document.querySelector('.tip-Custom').value='';
-    document.querySelector('.tip-Custom').placeholder="Custom"
+    document.querySelector('.tip-Custom').value = '';
+    document.querySelector('.tip-Custom').placeholder = "Custom"
+    document.querySelector('.totalTip__right').style.fontSize = "48px"
+    document.querySelector('.personTip__right').style.fontSize = "48px"
+    messagesOn()
+    calcStatus = false;
 })
+
+
+// Activate all validation messages
+function messagesOff() {
+    for (let x of document.querySelectorAll('.alert')) {
+        x.classList.add('deactivate')
+    }
+}
+function messagesOn() {
+    if (calcStatus === true) {
+        for (let x of document.querySelectorAll('.alert')) {
+            x.classList.remove('deactivate')
+        }
+    }
+}

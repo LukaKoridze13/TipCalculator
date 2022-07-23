@@ -357,3 +357,14 @@ $family: 'Space Mono', monospace;
     color: hsla(183, 100%, 15%, 1) !important;
     cursor: pointer !important;
 }
+
+.alert {
+    display: block !important;
+    font-family: $family !important;
+    font-weight: $weight !important;
+    line-height: 24px !important;
+    color: #E17457 !important;
+}
+.deactivate{
+    display: none !important;
+}
