@@ -79,7 +79,7 @@ $family: 'Space Mono', monospace;
     box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
     border-radius: 25px;
     margin-top: 87.86px;
-
+    gap:20px;
     &__left {
         width: 379px;
         height: 417px;
@@ -205,6 +205,7 @@ $family: 'Space Mono', monospace;
     &__right {
         width: 413px;
         height: 417px;
+        outline: auto;
     }
 }
 

@@ -1,0 +1,44 @@
+@media (max-width: 920px) {
+  .main {
+    width: 430px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 40px;
+  }
+}
+@media (max-width: 430px) {
+  .main {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 32px;
+  }
+  .main__left {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .main__left .billBox div input {
+    width: 100%;
+  }
+  .main__left .tipBox .tips {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+  }
+  .main__left .tipBox .tips .tip {
+    width: 100%;
+  }
+  .main__right {
+    width: 100%;
+    height: 417px;
+    outline: auto;
+  }
+}/*# sourceMappingURL=responsive.css.map */

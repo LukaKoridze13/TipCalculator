@@ -54,6 +54,7 @@
   box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
   border-radius: 25px;
   margin-top: 87.86px;
+  gap: 20px;
 }
 .main__left {
   width: 379px;
@@ -170,6 +171,7 @@
 .main__right {
   width: 413px;
   height: 417px;
+  outline: auto;
 }
 
 .active {
