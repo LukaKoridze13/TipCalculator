@@ -149,15 +149,14 @@
 }
 .main__left .tipBox .tips .tip-Custom {
   background: hsl(185deg, 38%, 97%);
-  letter-spacing: 2px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
   font-size: 24px;
   line-height: 36px;
-  color: hsl(180deg, 18%, 40%);
-  font-weight: 700;
+  color: #00474B;
   border: none;
   outline: none;
-  text-align: center;
-  font-family: "Space Mono", monospace;
+  text-align: right;
   cursor: pointer;
   -moz-appearance: textfield;
 }
@@ -167,6 +166,33 @@
 }
 .main__left .tipBox .tips .tip-Custom:focus {
   border: 2px solid hsl(172deg, 67%, 45%);
+}
+.main__left .tipBox .tips .tip-Custom::-moz-placeholder {
+  font-family: "Space Mono", monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  color: #547878;
+}
+.main__left .tipBox .tips .tip-Custom:-ms-input-placeholder {
+  font-family: "Space Mono", monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  color: #547878;
+}
+.main__left .tipBox .tips .tip-Custom::placeholder {
+  font-family: "Space Mono", monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  color: #547878;
 }
 .main__left .peopleBox {
   margin-top: 40px;
@@ -295,4 +321,10 @@
 .active {
   background-color: hsl(173deg, 61%, 77%) !important;
   color: hsl(183deg, 100%, 15%) !important;
+}
+
+.activeButton {
+  background: #9FE8DF !important;
+  color: hsl(183deg, 100%, 15%) !important;
+  cursor: pointer !important;
 }/*# sourceMappingURL=style.css.map */

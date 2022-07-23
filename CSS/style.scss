@@ -179,15 +179,14 @@ $family: 'Space Mono', monospace;
 
                 .tip-Custom {
                     background: $inpbg;
-                    letter-spacing: 2px;
-                    font-size: $inputs;
-                    line-height: 36px;
-                    color: hsla(180, 18%, 40%, 1);
+                    font-family: $family;
                     font-weight: $weight;
+                    font-size: 24px;
+                    line-height: 36px;
+                    color: #00474B;
                     border: none;
                     outline: none;
-                    text-align: center;
-                    font-family: $family;
+                    text-align: right;
                     cursor: pointer;
 
                     &::-webkit-inner-spin-button {
@@ -199,6 +198,16 @@ $family: 'Space Mono', monospace;
 
                     &:focus {
                         border: 2px solid hsla(172, 67%, 45%, 1)
+                    }
+
+                    &::placeholder {
+                        font-family: $family;
+                        font-style: normal;
+                        font-weight: $weight;
+                        font-size: $inputs;
+                        line-height: 36px;
+                        text-align: center;
+                        color: #547878;
                     }
                 }
             }
@@ -273,6 +282,7 @@ $family: 'Space Mono', monospace;
         background-color: $dark;
         border-radius: 15px;
         padding-top: 40px;
+
         .personTip,
         .totalTip {
             width: 80%;
@@ -283,6 +293,7 @@ $family: 'Space Mono', monospace;
             margin: 0px auto;
             flex-wrap: wrap;
             gap: 20px;
+
             &__left {
                 .tipAmount {
                     height: 24px;
@@ -339,4 +350,10 @@ $family: 'Space Mono', monospace;
 .active {
     background-color: hsla(173, 61%, 77%, 1) !important;
     color: $dark  !important;
+}
+
+.activeButton {
+    background: #9FE8DF !important;
+    color: hsla(183, 100%, 15%, 1) !important;
+    cursor: pointer !important;
 }
