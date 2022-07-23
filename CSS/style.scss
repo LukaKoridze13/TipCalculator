@@ -1,0 +1,142 @@
+// Font Import
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+// Colors
+$cyan: hsl(172, 67%, 45%);
+$dark: hsl(183, 100%, 15%);
+$darkgray: hsl(186, 14%, 43%);
+$grey: hsl(184, 14%, 56%);
+$lightgrey: hsl(185, 41%, 84%);
+$xlightgrey: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+$background: #F2F2F2;
+$splitter: hsla(180, 25%, 32%, 1);
+$inpbg: hsla(185, 38%, 97%, 1);
+
+// Screen Sizes
+$mobile: 375px;
+$desktop: 1440px;
+
+// Text
+$weight: 700;
+$inputs: 24px;
+$family: 'Space Mono', monospace;
+
+// Global Styles
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.centerCol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.spaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.spaceAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+// Whole Container
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: $lightgrey;
+    font-family: $family;
+    font-weight: $weight;
+}
+
+// header
+.header {
+    width: fit-content;
+    margin: 0 auto;
+
+    &__logo {
+        width: 86.66px;
+        height: 53.14px;
+    }
+}
+
+// main
+.main {
+    width: 920px;
+    height: 481px;
+    background: #FFFFFF;
+    box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
+    border-radius: 25px;
+    margin-top: 87.86px;
+
+    &__left {
+        width: 379px;
+        height: 417px;
+
+        .billBox {
+            label {
+                height: 24px;
+                font-size: 16px;
+                line-height: 24px;
+                color: $darkgray;
+                display: block;
+            }
+
+            div {
+                position: relative;
+                margin-top: 6px;
+
+                img {
+                    position: absolute;
+                    left: 5.08%;
+                    top: 24px;
+                    transform: translateY(-50%);
+                }
+
+                input {
+                    width: 100%;
+                    height: 48px;
+                    display: block;
+                    background: $inpbg;
+                    border-radius: 5px;
+                    outline: none;
+                    border: none;
+                    padding: 6px 17px;
+                    text-align: right;
+                    position: absolute;
+                    font-size: $inputs;
+                    line-height: 36px;
+                    color: $dark;
+                    font-weight: $weight;
+
+                    &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+
+                    -moz-appearance: textfield;
+                }
+
+            }
+        }
+        .tipBox{
+            
+        }
+    }
+
+    &__right {
+        width: 413px;
+        height: 417px;
+    }
+}
